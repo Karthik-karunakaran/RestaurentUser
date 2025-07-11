@@ -12,7 +12,7 @@ const Menu = ({ cart, setCart }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get("http://localhost:8080/get");
+            const response = await axios.get("https://restaurentbackend-qste.onrender.com/get");
             setOriginalData(response.data);
             setData(response.data);
         };
@@ -97,7 +97,7 @@ const Menu = ({ cart, setCart }) => {
                         <div className="col-lg-8 col-md-12 col-sm-12  column-two">
                             <div className="row">
                                 {data.map((values) => {
-                                    const { foodName, price, imageUrl, foodId, rating } = values;
+                                    const { foodName, price, imageUrl, foodId } = values;
                                     return (
                                         <>
                                             <div key={foodId} className="col-lg-6 col-md-6 col-sm-12 menu-food-item-column" >
