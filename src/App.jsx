@@ -11,7 +11,7 @@ import Detail from './components/Detail'
 import Cart from './components/Cart'
 import Login from './components/Login'
 import Product from './components/Product'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 const App = () => {
 
