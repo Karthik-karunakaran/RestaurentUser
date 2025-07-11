@@ -1,0 +1,74 @@
+                                     <div className="row ">
+                                       <div className="col-12 pe-0">
+                                          <div className="row gap-5 ">
+                                              {
+                                             cart.length === 0 ? (
+                                                <p>Your cart is empty</p>
+                                             ) : (
+                                                cart.map((product, index) => (
+                                                   <React.Fragment key={index}>
+                                                     
+                                                         <div className=" col-5 border-style col-lg-12  p-0 d-flex justify-content-center ">
+                                                            <div className='cart-item-overall'>
+                                                               <div className='img-div'>
+                                                                  <img src={product.image} alt="" />
+                                                               </div>
+                                                               <div className='content-div'>
+                                                                  <div className='name-div'>
+                                                                     <p className='name'>{product.name}</p>
+                                                                     <i className="fa-solid fa-trash ms-auto" onClick={() => removeCart(product.id)}></i>
+                                                                  </div>
+                                                                  <p><span><i className="fa-solid fa-star" /></span>{product.rating}</p>
+                                                                  <div className='d-flex justify-space-between price-div'>
+                                                                     <p><span>₹</span>{product.price}/-</p>
+                                                                     <div className='d-flex ms-auto me-auto quantity-div-overall'>
+                                                                        <button className='minus' onClick={() => decreaseQty(product.id)}><i className="fa-solid fa-minus"></i></button>
+                                                                        <span className='quantity text-dark'>{product.quantity}</span>
+                                                                        <button className='plus' onClick={() => increaseQty(product.id)}><i className="fa-solid fa-plus"></i></button>
+                                                                     </div>
+                                                                     <p>total: ₹ {product.price * product.quantity}/-</p>
+                                                                  </div>
+                                                               </div>
+                                                               
+                                                            </div>
+
+
+                                                            <div className='cart-item-overall row w-100 d-none'>
+                                                               <div className="col-12  border-style">
+                                                                  <div className="row">
+                                                                     <div className='img-div col-12 '>
+                                                                        <img src={product.image} alt="" />
+                                                                     </div>
+                                                                     <div className='content-div col-12 '>
+                                                                        <div className='name-div d-flex justify-space-between'>
+                                                                           <p className='name col-12'>{product.name}</p>
+                                                                           <i className="fa-solid fa-trash " onClick={() => removeCart(product.id)}></i>
+                                                                        </div>
+                                                                        <div className="d-flex rating-div">
+                                                                           <p className='d-flex gap-1'><span><i className="fa-solid fa-star" /></span>{product.rating}</p>
+                                                                           <p><span>₹</span>{product.price}/-</p>
+                                                                        </div>
+                                                                        <div className='d-flex justify-space-between price-div flex-column gap-2 align-items-center'>
+                                                                           <div className='d-flex  quantity-div-overall'>
+                                                                              <button className='minus' onClick={() => decreaseQty(product.id)}><i className="fa-solid fa-minus"></i></button>
+                                                                              <span className='quantity text-dark'>{product.quantity}</span>
+                                                                              <button className='plus' onClick={() => increaseQty(product.id)}><i className="fa-solid fa-plus"></i></button>
+                                                                           </div>
+                                                                           <p className='ms-2'>Total: ₹ {product.price * product.quantity}/-</p>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                            
+                                                         </div>
+                                                         
+                                                   </React.Fragment>
+                                                ))
+                                             )
+                                          }
+
+                                          </div>
+                                         
+                                       </div>
+                                    </div>
